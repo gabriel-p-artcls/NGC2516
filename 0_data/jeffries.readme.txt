@@ -1,0 +1,75 @@
+J/A+A/375/863                Photometry in NGC 2516            (Jeffries+, 2001)
+================================================================================
+Photometry and membership for low mass stars in the young open cluster NGC 2516
+    Jeffries R.D., Thurston M.R., Hambly N.C.
+      <Astron. Astrophys. 375, 863 (2001)>
+      =2001A&A...375..863J      (SIMBAD/NED BibCode)
+================================================================================
+ADC_Keywords: Clusters, open ; Photometry
+Keywords: open clusters and associations: individual: NGC 2516 -
+         stars: mass function, luminosity function - binaries: general
+
+Abstract:
+    We present the results of a 0.86 square degree CCD photometric survey
+    of the open cluster NGC 2516, which has an age of about 150Myr and may
+    have a much lower metallicity than the similarly-aged Pleiades. Our
+    BVI_c_ survey of cluster members is complete to V~20 and is used to
+    select a preliminary catalogue of 1254 low mass (0.<M<2.0M_{sun}_)
+    cluster candidates, of which about 70-80 percent are expected to be
+    genuine. After applying corrections for contamination by non-members
+    and adding data for higher mass stars from the literature, we
+    investigate the cluster binarity, luminosity and mass function, mass
+    segregation and total mass. We find a binary fraction of 26+/-5%, for
+    A to M-type systems with mass ratios between 0.6 and 1, which is very
+    similar to the Pleiades.
+
+File Summary:
+--------------------------------------------------------------------------------
+  FileName   Lrecl  Records   Explanations
+--------------------------------------------------------------------------------
+ReadMe          80        .   This file
+table3.dat      73   15495    The photometric catalogue for NGC 2516
+--------------------------------------------------------------------------------
+
+Byte-by-byte Description of file: table3.dat
+--------------------------------------------------------------------------------
+   Bytes Format Units   Label     Explanations
+--------------------------------------------------------------------------------
+   1-  5  I5    ---     ID        Star number
+   8-  9  I2    h       RAh       Right ascension (J2000)
+  11- 12  I2    min     RAm       Right ascension (J2000)
+  14- 19  F6.3  s       RAs       Right ascension (J2000)
+      22  A1    ---     DE-       Declination sign
+  23- 24  I2    deg     DEd       Declination (J2000)
+  26- 27  I2    arcmin  DEm       Declination (J2000)
+  29- 33  F5.2  arcsec  DEs       Declination (J2000)
+  36- 41  F6.3  ---     Vmag      V magnitude
+  44- 49  F6.3  ---     B-V       ?=-9.999 B-V colour index (1)
+  52- 57  F6.3  ---     V-I       ?=-9.999 V-I (Cousins) colour index (1)
+  60- 61  I2    ---     F1        [-1/1] V vs B-V membership flag (2)
+  63- 64  I2    ---     F2        [-1/1] V vs V-I membership flag (2)
+  66- 67  I2    ---     F3        [-1/1] B-V vs V-I membership flag (2)
+  69- 70  I2    ---     F4        [-1/1] Candidate membership flag (3)
+      73  I1    ---     F5        [0/1] Binarity flag (4)
+--------------------------------------------------------------------------------
+Note (1): A value of -9.999 indicates that the value is unavailable for this
+           star.
+Note (2): Refers to the tests outlined in Sect. 3.3.
+           Flag is set to
+             1 if the star passes the test,
+            -1 if it fails or
+            0 if there is insufficient information to apply the test.
+Note (3): A star is flagged with a
+           1 if it is a candidate member because it has not failed either of the
+              three membership tests, or is flagged with a
+           -1 if it has failed one or more of the tests and is classed as a
+               non-member.
+Note (4): A candidate member (see note 2) is flagged with a
+           1 if it is a potential unresolved binary system, or
+           0 otherwise.
+--------------------------------------------------------------------------------
+
+Acknowledgements: Rob Jeffries <rdj@astro.keele.ac.uk>
+
+================================================================================
+(End)                                        Patricia Bauer [CDS]    27-Aug-2001
