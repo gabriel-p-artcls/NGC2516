@@ -1,5 +1,6 @@
 
 from astropy.io import ascii
+import pathlib
 import numpy as np
 import matplotlib.pyplot as plt
 
@@ -8,13 +9,16 @@ import matplotlib.pyplot as plt
 Compare our members selection with that from Pang
 """
 
-data_pang = ascii.read(
-    '../2_pipeline/pang_data_format/ngc2516_pang.dat')
+
+data_pang = ascii.read('../2_pipeline/pang_data_format/ngc2516_pang.dat')
 data = ascii.read('../2_pipeline/4_members_estim/out/NGC2516_15deg.dat')
-# data = ascii.read('../0_data/NGC2516_TAPVizier.dat')
+print("Pang members: {}, our members: {}".
+      format(len(data_pang), len(data)))
 
-print("Pang members: {}, our members: {}".format(len(data_pang), len(data)))
-
+cent = (np.median(data_pang['Xcor']), np.median(data_pang['Ycor']), np.median(data_pang['Zcor']))
+from scipy.spatial.distance import cdist
+dist0=cdist(np.array([cent]), np.array([data_pang['Xcor'], data_pang['Ycor'], data_pang['Zcor']]).T)
+breakpoint()
 # plt.subplot(221)
 # plt.scatter(data_pang['_x'], data_pang['_y'], c='r', alpha=.5,
 #             marker='.')
@@ -42,7 +46,8 @@ for i, st in enumerate(data_pang['GaiaEDR3']):
         j = full_IDs.index(st)
         pang_us_match.append(j)
     except ValueError:
-        # print(st, [data_pang[i][_] for _ in ('Plx', 'pmRA', 'pmDE', 'Gmag', 'BP-RP')])
+        # print(st, [data_pang[i][_] for _ in ('Plx', 'pmRA', 'pmDE', 'Gmag',
+        # 'BP-RP')])
         # Index of Pang's member in Pang's data
         pang_no_match.append(i)
 pang_us_match = data[np.array(pang_us_match)]
